@@ -1,0 +1,9 @@
+﻿@model Lab12.Models.NumberModel
+
+@{
+    ViewData["Title"] = "ModelBindingSeparateModel";
+    Layout = "_Layout";
+}
+
+<h1>Result</h1>
+<div>@Model.FirstNum @Model.Operation @Model.SecondNum = @ViewData["result"]</div>

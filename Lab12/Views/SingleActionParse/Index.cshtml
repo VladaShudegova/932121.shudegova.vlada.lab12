@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "SingleActionParse";
+    Layout = "_Layout";
+}
+
+@if (!ViewData.Keys.Contains("result"))
+{
+    <form action=@Url.Action("Index", "SingleActionParse") method="post">
+        <input type="number" name="firstNumber">
+        <select name="operation">
+            <option>+</option>
+            <option>-</option>
+            <option>/</option>
+            <option>*</option>
+        </select>
+        <input type="number" name="secondNumber">
+        <button type="submit">Вычислить</button>
+    </form>
+}
+@if(ViewData.Keys.Contains("result"))
+{
+    <h1>Result</h1>
+    <div>@ViewData["firstNumber"] @ViewData["Operation"] @ViewData["secondNumber"] = @ViewData["result"]</div>
+}
